@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>尉氏县第二高级中学 · 摄影展</title>
+<meta name="description" content="尉氏县第二高级中学摄影展 —— 光影记录校园，欢迎师生校友投稿。">
+<style>
+  :root{
+    --bg:#0c0d0f; --bg-soft:#121317; --bg-card:#16171b;
+    --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.18);
+    --txt:#f4f2ee; --txt-2:#a7a7ad; --txt-3:#6f7076;
+    --gold:#c8a668; --gold-soft:rgba(200,166,104,.16);
+    --max:1240px; --ease:cubic-bezier(.22,.7,.2,1);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;
+    background:
+      radial-gradient(900px 500px at 15% -10%, rgba(200,166,104,.10), transparent 70%),
+      radial-gradient(800px 500px at 100% 0%, rgba(120,150,200,.07), transparent 70%);
+    pointer-events:none;z-index:0;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+  ::selection{background:var(--gold);color:#111}
+
+  .serif{font-family:"Noto Serif SC","Songti SC","Source Han Serif SC","STSong",Georgia,serif}
+  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 28px}
+  .hair{height:1px;background:var(--line);border:0;margin:0}
+
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:60;height:66px;display:flex;align-items:center;
+    backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);
+    background:rgba(12,13,15,.62);border-bottom:1px solid transparent;
+    transition:background .4s var(--ease),border-color .4s var(--ease);
+  }
+  .nav.scrolled{background:rgba(12,13,15,.9);border-bottom-color:var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand-mark{width:8px;height:8px;background:var(--gold);flex:none;transform:rotate(45deg)}
+  .brand-text{font-size:14px;letter-spacing:.16em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand-text b{font-weight:600}
+  .brand-text span{color:var(--txt-3);margin:0 6px}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{font-size:13.5px;letter-spacing:.1em;color:var(--txt-2);position:relative;padding:4px 0;transition:color .3s}
+  .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold);transition:right .35s var(--ease)}
+  .nav-links a:hover{color:var(--txt)}
+  .nav-links a:hover::after{right:0}
+  .nav-cta{border:1px solid var(--line-strong);border-radius:2px;padding:9px 20px;font-size:13px;letter-spacing:.12em;color:var(--txt);transition:all .35s var(--ease)}
+  .nav-cta:hover{background:var(--gold);border-color:var(--gold);color:#14140f}
+
+  .hero{position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 28px 90px}
+  .hero-line{position:absolute;top:0;bottom:0;width:1px;background:var(--line)}
+  .hero-line.l{left:max(28px,8vw)}
+  .hero-line.r{right:max(28px,8vw)}
+  .eyebrow{font-size:11.5px;letter-spacing:.34em;color:var(--gold);text-transform:uppercase;margin-bottom:30px}
+  .hero h1{font-size:clamp(2.1rem,6.6vw,4.6rem);font-weight:600;letter-spacing:.06em;line-height:1.22;margin:0}
+  .hero .exhibit{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:26px}
+  .hero .exhibit i{width:clamp(28px,6vw,72px);height:1px;background:var(--line-strong)}
+  .hero .exhibit strong{font-family:"Noto Serif SC","Songti SC",serif;font-size:clamp(1.3rem,3.2vw,2rem);font-weight:400;letter-spacing:.5em;color:var(--gold);text-indent:.5em}
+  .hero p.sub{max-width:34em;margin:34px auto 0;color:var(--txt-2);font-size:15px;letter-spacing:.05em}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:46px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 34px;border-radius:2px;font-size:14px;letter-spacing:.14em;border:1px solid var(--line-strong);transition:all .4s var(--ease)}
+  .btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-soft)}
+  .btn.solid{background:var(--gold);border-color:var(--gold);color:#14140f}
+  .btn.solid:hover{background:#d8b878;color:#14140f;border-color:#d8b878}
+  .btn[disabled]{opacity:.5;cursor:default}
+  .scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;color:var(--txt-3);display:flex;flex-direction:column;align-items:center;gap:12px}
+  .scroll-cue::after{content:"";width:1px;height:46px;background:linear-gradient(to bottom,var(--line-strong),transparent);animation:cue 2.6s var(--ease) infinite}
+  @keyframes cue{0%{opacity:.2;transform:scaleY(.4)}50%{opacity:1;transform:scaleY(1)}100%{opacity:.2;transform:scaleY(.4)}}
+
+  section{position:relative;z-index:1}
+  .sec{padding:112px 0}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  .sec-num{font-size:12px;letter-spacing:.3em;color:var(--gold);margin-bottom:14px}
+  .sec-title{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:600;letter-spacing:.06em;margin:0}
+  .sec-desc{color:var(--txt-2);font-size:14.5px;max-width:30em;margin:14px 0 0}
+  .sec-head + .hair{margin-top:38px}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0 8px}
+  .filters button{padding:8px 18px;border:1px solid var(--line);border-radius:2px;font-size:13px;letter-spacing:.1em;color:var(--txt-2);transition:all .35s var(--ease)}
+  .filters button:hover{color:var(--txt);border-color:var(--line-strong)}
+  .filters button[aria-pressed="true"]{color:var(--gold);border-color:rgba(200,166,104,.55);background:var(--gold-soft)}
+  .count{font-size:12.5px;letter-spacing:.16em;color:var(--txt-3)}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));grid-auto-flow:dense;gap:16px;margin-top:34px}
+  .card{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--bg-card);border:1px solid var(--line);border-radius:2px}
+  .card.feat{grid-column:span 2}
+  .card-btn{display:block;width:100%;height:100%;padding:0;text-align:left}
+  .card img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease),filter .6s var(--ease);filter:saturate(.92) contrast(1.02)}
+  .card-btn:hover img{transform:scale(1.045);filter:saturate(1.04) contrast(1.03)}
+  .card-meta{position:absolute;left:0;right:0;bottom:0;padding:52px 20px 18px;background:linear-gradient(to top,rgba(6,7,9,.9),rgba(6,7,9,.45) 55%,transparent);display:flex;flex-direction:column;gap:5px;transform:translateY(10px);opacity:0;transition:all .55s var(--ease)}
+  .card-btn:hover .card-meta,.card-btn:focus-visible .card-meta{transform:none;opacity:1}
+  .card-title{font-size:15.5px;font-weight:600;letter-spacing:.04em}
+  .card-author{font-size:12.5px;color:var(--txt-2);letter-spacing:.08em}
+  .card-tag{position:absolute;top:14px;left:14px;padding:4px 10px;font-size:11px;letter-spacing:.14em;background:rgba(6,7,9,.6);border:1px solid var(--line);color:var(--txt-2);backdrop-filter:blur(6px);transition:opacity .4s var(--ease)}
+  .card-btn:hover .card-tag{opacity:0}
+  .card.is-empty img{opacity:0}
+  .card.is-empty::after{content:"影像暂不可用";position:absolute;inset:0;display:grid;place-items:center;color:var(--txt-3);font-size:12.5px;letter-spacing:.2em}
+  .empty{grid-column:1/-1;padding:80px 0;text-align:center;color:var(--txt-3);font-size:14px;letter-spacing:.12em}
+  .card.new{animation:pop 1.4s var(--ease)}
+  @keyframes pop{0%{box-shadow:0 0 0 0 rgba(200,166,104,.6)}100%{box-shadow:0 0 0 14px rgba(200,166,104,0)}}
+
+  .submit-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;margin-top:46px;align-items:start}
+  .drop{position:relative;border:1px dashed var(--line-strong);border-radius:2px;aspect-ratio:4/3;display:grid;place-items:center;text-align:center;padding:32px;background:rgba(255,255,255,.012);transition:all .4s var(--ease);overflow:hidden}
+  .drop:hover{border-color:rgba(200,166,104,.5);background:var(--gold-soft)}
+  .drop.over{border-color:var(--gold);background:var(--gold-soft)}
+  .drop .in{position:relative;z-index:1}
+  .drop .plus{width:46px;height:46px;margin:0 auto 20px;position:relative}
+  .drop .plus::before,.drop .plus::after{content:"";position:absolute;background:var(--gold)}
+  .drop .plus::before{left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%)}
+  .drop .plus::after{top:50%;left:0;right:0;height:1px;transform:translateY(-50%)}
+  .drop strong{display:block;font-size:15px;font-weight:500;letter-spacing:.08em}
+  .drop small{display:block;margin-top:10px;color:var(--txt-3);font-size:12.5px;line-height:1.9}
+  .preview{position:absolute;inset:0}
+  .preview img{width:100%;height:100%;object-fit:cover}
+  .preview .bar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;background:linear-gradient(to top,rgba(6,7,9,.92),transparent);font-size:12.5px;color:var(--txt-2)}
+  .preview .bar span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .preview .bar button{flex:none;font-size:12.5px;letter-spacing:.1em;color:var(--gold);border-bottom:1px solid rgba(200,166,104,.5);padding-bottom:2px}
+
+  .fields{display:grid;gap:26px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .field label{display:block;font-size:11.5px;letter-spacing:.2em;color:var(--txt-3);text-transform:uppercase;margin-bottom:8px}
+  .field label em{font-style:normal;color:var(--gold);margin-left:6px}
+  .field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line-strong);padding:11px 2px;color:var(--txt);font:inherit;outline:none;transition:border-color .35s var(--ease)}
+  .field textarea{resize:vertical;min-height:88px;line-height:1.7}
+  .field input::placeholder,.field textarea::placeholder{color:#4d4e54}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+  .field select{appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--txt-3) 50%),linear-gradient(135deg,var(--txt-3) 50%,transparent 50%);background-position:calc(100% - 12px) 20px,calc(100% - 7px) 20px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+  .field select option{background:#15161a;color:var(--txt)}
+  .form-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:8px}
+  .hint{font-size:12.5px;color:var(--txt-3);line-height:1.9}
+
+  .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);margin-top:46px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .rule{background:var(--bg);padding:38px 30px}
+  .rule .n{font-family:"Noto Serif SC",serif;font-size:12px;letter-spacing:.24em;color:var(--gold);margin-bottom:18px}
+  .rule h4{margin:0 0 12px;font-size:16px;font-weight:600;letter-spacing:.05em}
+  .rule p{margin:0;color:var(--txt-2);font-size:13.5px;line-height:1.95}
+
+  footer{border-top:1px solid var(--line);padding:56px 0 44px;margin-top:40px;position:relative;z-index:1}
+  .foot{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;align-items:flex-end}
+  .foot .t{font-size:13.5px;letter-spacing:.12em;color:var(--txt-2)}
+  .foot .s{font-size:12px;color:var(--txt-3);margin-top:10px;letter-spacing:.06em}
+  .foot .tools{display:flex;gap:20px;flex-wrap:wrap}
+  .foot .tools button{font-size:12px;letter-spacing:.1em;color:var(--txt-3);border-bottom:1px solid var(--line);padding-bottom:3px;transition:color .3s}
+  .foot .tools button:hover{color:var(--gold)}
+
+  .lb{position:fixed;inset:0;z-index:100;display:none;background:rgba(7,8,10,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .lb.open{display:flex;flex-direction:column}
+  .lb-top{display:flex;align-items:center;justify-content:space-between;padding:20px 26px;font-size:12px;letter-spacing:.18em;color:var(--txt-3)}
+  .lb-close{width:40px;height:40px;border:1px solid var(--line-strong);border-radius:50%;display:grid;place-items:center;transition:all .35s var(--ease);font-size:16px;line-height:1}
+  .lb-close:hover{border-color:var(--gold);color:var(--gold);transform:rotate(90deg)}
+  .lb-stage{flex:1;display:flex;align-items:center;justify-content:center;gap:18px;padding:0 18px;min-height:0}
+  .lb-figure{margin:0;display:flex;flex-direction:column;align-items:center;min-width:0}
+  .lb-figure img{max-width:min(1100px,86vw);max-height:68vh;object-fit:contain;border:1px solid var(--line);background:#101115}
+  .lb-cap{margin-top:22px;text-align:center;max-width:640px}
+  .lb-cap h3{margin:0 0 8px;font-size:17px;font-weight:600;letter-spacing:.05em}
+  .lb-cap .by{font-size:12.5px;color:var(--gold);letter-spacing:.14em}
+  .lb-cap p{color:var(--txt-2);font-size:13.5px;margin:12px 0 0;line-height:1.95}
+  .lb-nav{width:46px;height:46px;flex:none;border:1px solid var(--line-strong);border-radius:50%;display:grid;place-items:center;transition:all .35s var(--ease)}
+  .lb-nav:hover{border-color:var(--gold);color:var(--gold)}
+  .lb-nav[disabled]{opacity:.25;cursor:default}
+
+  .toast{position:fixed;left:50%;bottom:38px;transform:translate(-50%,18px);z-index:120;padding:14px 26px;font-size:13.5px;letter-spacing:.06em;background:#1a1b20;border:1px solid var(--line-strong);border-left:2px solid var(--gold);border-radius:2px;opacity:0;pointer-events:none;transition:all .45s var(--ease);max-width:calc(100vw - 40px)}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:980px){
+    .submit-grid{grid-template-columns:1fr;gap:44px}
+    .lb-figure img{max-height:58vh}
+  }
+  @media (max-width:760px){
+    .sec{padding:82px 0}
+    .nav-links{display:none}
+    .card.feat{grid-column:auto}
+    .hero-line{display:none}
+    .gallery{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .lb-nav{width:38px;height:38px}
+    .lb-stage{gap:6px;padding:0 10px}
+    .row2{grid-template-columns:1fr}
+    .foot{align-items:flex-start;flex-direction:column}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition-duration:.01ms!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <i class="brand-mark"></i>
+      <span class="brand-text"><b>尉氏县第二高级中学</b><span>·</span>摄影展</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#gallery">作品展厅</a>
+      <a href="#submit">我要投稿</a>
+      <a href="#rules">投稿须知</a>
+    </nav>
+    <a class="nav-cta" href="#submit">投稿</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <i class="hero-line l"></i>
+  <i class="hero-line r"></i>
+  <div class="eyebrow">Weishi No.2 Senior High School · Photography Exhibition</div>
+  <h1 class="serif">尉氏县第二高级中学</h1>
+  <div class="exhibit"><i></i><strong class="serif">摄影展</strong><i></i></div>
+  <p class="sub">以镜头记录课堂与操场、晨光与暮色，留住属于我们的校园时光。诚邀全校师生与校友投稿。</p>
+  <div class="hero-actions">
+    <a class="btn solid" href="#gallery">进入展厅</a>
+    <a class="btn" href="#submit">我要投稿</a>
+  </div>
+  <div class="scroll-cue">往下浏览</div>
+</section>
+
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">01 / EXHIBITION</div>
+        <h2 class="sec-title serif">作品展厅</h2>
+        <p class="sec-desc">每一张照片都是一段时间。点击可查看大图与作者信息。</p>
+      </div>
+      <div class="count" id="count">加载中…</div>
+    </div>
+    <hr class="hair">
+    <div class="filters" id="filters"></div>
+    <div class="gallery" id="gallery-grid">
+      <div class="empty">正在加载作品…</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="submit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">02 / SUBMISSION</div>
+        <h2 class="sec-title serif">我要投稿</h2>
+        <p class="sec-desc">上传你的作品，填写基本信息。提交后会立即出现在上方展厅，所有人都能看到。</p>
+      </div>
+    </div>
+    <hr class="hair">
+
+    <div class="submit-grid">
+      <div class="drop" id="drop" tabindex="0" role="button" aria-label="选择或拖入照片">
+        <div class="in">
+          <div class="plus"></div>
+          <strong>点击选择照片，或拖拽到此处</strong>
+          <small>支持 JPG / PNG / WEBP<br>会自动压缩后上传，单张建议不超过 10MB</small>
+        </div>
+        <div class="preview" id="preview" hidden>
+          <img id="preview-img" alt="投稿预览">
+          <div class="bar">
+            <span id="preview-name"></span>
+            <button type="button" id="clear-img">移除</button>
+          </div>
+        </div>
+      </div>
+      <input type="file" id="file" accept="image/*" hidden>
+
+      <form class="fields" id="form" novalidate>
+        <div class="field">
+          <label for="f-title">作品标题 <em>*</em></label>
+          <input id="f-title" name="title" type="text" maxlength="40" placeholder="例如：课间的走廊" required>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="f-author">作者姓名 <em>*</em></label>
+            <input id="f-author" name="author" type="text" maxlength="20" placeholder="你的姓名" required>
+          </div>
+          <div class="field">
+            <label for="f-group">班级 / 身份</label>
+            <input id="f-group" name="group" type="text" maxlength="24" placeholder="如：高二(3)班、教师、校友">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-cat">作品分类</label>
+          <select id="f-cat" name="category">
+            <option>校园</option><option>人物</option><option>风景</option>
+            <option>纪实</option><option>其他</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-desc">作品说明</label>
+          <textarea id="f-desc" name="desc" maxlength="160" placeholder="一句话讲讲这张照片背后的故事（选填）"></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn solid" type="submit" id="submit-btn">提交作品</button>
+          <span class="hint">提交即公开展示。请确认已获得画中人物同意，署名归作者所有。</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="rules">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">03 / NOTICE</div>
+        <h2 class="sec-title serif">投稿须知</h2>
+      </div>
+    </div>
+    <div class="rules reveal">
+      <div class="rule">
+        <div class="n">01</div><h4>原创作品</h4>
+        <p>作品须为本人拍摄或拥有完整著作权，内容健康向上，与校园、师生或家乡风貌相关。</p>
+      </div>
+      <div class="rule">
+        <div class="n">02</div><h4>画质与格式</h4>
+        <p>接受 JPG / PNG / WEBP 格式，单张建议不超过 10MB。手机拍摄亦可，注意避免过度滤镜。</p>
+      </div>
+      <div class="rule">
+        <div class="n">03</div><h4>信息完整</h4>
+        <p>请如实填写标题、姓名与班级（或身份），便于展览标注与后续联系。</p>
+      </div>
+      <div class="rule">
+        <div class="n">04</div><h4>使用说明</h4>
+        <p>提交后作品会即时公开。作者保留署名权，如涉侵权由投稿人自负责任。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="t">尉氏县第二高级中学 · 摄影展</div>
+      <div class="s">主办：尉氏县第二高级中学　|　光影记录校园，欢迎投稿</div>
+    </div>
+    <div class="tools">
+      <button type="button" id="reload">刷新展厅</button>
+      <a href="#top" style="font-size:12px;letter-spacing:.1em;color:var(--txt-3);border-bottom:1px solid var(--line);padding-bottom:3px">回到顶部</a>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="作品大图">
+  <div class="lb-top">
+    <span id="lb-counter">01 / 01</span>
+    <button class="lb-close" id="lb-close" type="button" aria-label="关闭">✕</button>
+  </div>
+  <div class="lb-stage">
+    <button class="lb-nav" id="lb-prev" type="button" aria-label="上一张">‹</button>
+    <figure class="lb-figure">
+      <img id="lb-img" alt="">
+      <figcaption class="lb-cap">
+        <h3 id="lb-title"></h3>
+        <div class="by" id="lb-by"></div>
+        <p id="lb-desc"></p>
+      </figcaption>
+    </figure>
+    <button class="lb-nav" id="lb-next" type="button" aria-label="下一张">›</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://static.cloudbase.net/cloudbase-js-sdk/2.17.5/cloudbase.full.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  /* ================= 配置：只需要改这一行 ================= */
+  const ENV_ID = "你的环境ID";        // ← 例如 "ws2z-3g5abcd12345"
+  const COLL   = "works";             // 数据库集合名
+
+  const CATS = ["校园","人物","风景","纪实","其他"];
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c =>
+    ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+
+  /* ================= 初始化 CloudBase ================= */
+  let app = null, auth = null, db = null, ready = false, works = [];
+
+  try {
+    app  = cloudbase.init({ env: ENV_ID });
+    auth = app.auth({ persistence: "local" });
+    db   = app.database();
+    ready = true;
+  } catch (e) {
+    ready = false;
+  }
+
+  let loggedIn = false;
+  async function ensureLogin(){
+    if (loggedIn) return;
+    if (auth.hasLoginState && auth.hasLoginState()) { loggedIn = true; return; }
+    await auth.anonymousAuthProvider().signIn();
+    loggedIn = true;
+  }
+
+  /* ================= 读取云端作品 ================= */
+  async function loadWorks(){
+    if (!ready){ fail("配置未完成：请先在代码里填入 ENV_ID"); return; }
+    try{
+      await ensureLogin();
+      const res = await db.collection(COLL).orderBy("ts","desc").limit(100).get();
+      works = (res.data || []).map(w => Object.assign({}, w, { id: w._id }));
+
+      // 云存储 fileID → 临时访问链接
+      const ids = works.filter(w => w.fileID).map(w => w.fileID);
+      if (ids.length){
+        try{
+          const r = await app.getTempFileURL({ fileList: ids });
+          const map = {};
+          (r.fileList || []).forEach(f => { if (f.tempFileURL) map[f.fileID] = f.tempFileURL; });
+          works.forEach(w => { if (map[w.fileID]) w.src = map[w.fileID]; });
+        }catch(e){ /* 临时链接失败则保留原 src */ }
+      }
+      render();
+    }catch(e){
+      fail("加载失败：" + (e && e.message ? e.message : e));
+    }
+  }
+
+  function fail(msg){
+    works = [];
+    countEl.textContent = "共 0 件作品";
+    grid.innerHTML = '<div class="empty">' + esc(msg) + '</div>';
+  }
+
+  /* ================= 渲染 ================= */
+  const grid = $("gallery-grid"), filtersEl = $("filters"), countEl = $("count");
+  let activeCat = "全部";
+
+  function currentList(){
+    return activeCat === "全部" ? works : works.filter(w => w.category === activeCat);
+  }
+
+  function render(){
+    const list = currentList();
+    countEl.textContent = "共 " + list.length + " 件作品";
+
+    if (!list.length){
+      grid.innerHTML = '<div class="empty">暂时还没有作品，上传第一张吧。</div>';
+      return;
+    }
+
+    grid.innerHTML = list.map((w, i) => `
+      <article class="card${i % 5 === 0 ? " feat" : ""}" data-id="${esc(w.id)}">
+        <button class="card-btn" type="button" aria-label="查看作品：${esc(w.title)}">
+          <img src="${esc(w.src || "")}" alt="${esc(w.title)}" loading="lazy">
+          <span class="card-tag">${esc(w.category || "其他")}</span>
+          <span class="card-meta">
+            <span class="card-title">${esc(w.title)}</span>
+            <span class="card-author">${esc(w.author)}${w.group ? " · " + esc(w.group) : ""}</span>
+          </span>
+        </button>
+      </article>`).join("");
+
+    grid.querySelectorAll(".card img").forEach(img => {
+      img.addEventListener("error", () => img.closest(".card").classList.add("is-empty"));
+    });
+  }
+
+  ["全部"].concat(CATS).forEach(cat => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.textContent = cat;
+    b.setAttribute("aria-pressed", String(cat === activeCat));
+    b.addEventListener("click", () => {
+      activeCat = cat;
+      filtersEl.querySelectorAll("button").forEach(x =>
+        x.setAttribute("aria-pressed", String(x.textContent === cat)));
+      render();
+    });
+    filtersEl.appendChild(b);
+  });
+
+  /* ================= 导航滚动态 ================= */
+  const nav = $("nav");
+  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 24);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive:true });
+
+  /* ================= 灯箱 ================= */
+  const lb = $("lb"), lbImg = $("lb-img"), lbTitle = $("lb-title"),
+        lbBy = $("lb-by"), lbDesc = $("lb-desc"), lbCounter = $("lb-counter"),
+        lbPrev = $("lb-prev"), lbNext = $("lb-next");
+  let lbList = [], lbIndex = 0;
+
+  function showLB(){
+    const w = lbList[lbIndex];
+    if (!w) return;
+    lbImg.src = w.src || "";
+    lbImg.alt = w.title;
+    lbTitle.textContent = w.title;
+    lbBy.textContent = w.author + (w.group ? " · " + w.group : "") + (w.category ? " · " + w.category : "");
+    lbDesc.textContent = w.desc || "";
+    lbCounter.textContent = String(lbIndex + 1).padStart(2,"0") + " / " + String(lbList.length).padStart(2,"0");
+    lbPrev.disabled = lbList.length < 2;
+    lbNext.disabled = lbList.length < 2;
+  }
+  function openLB(id){
+    lbList = currentList();
+    const i = lbList.findIndex(w => w.id === id);
+    lbIndex = i < 0 ? 0 : i;
+    showLB();
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+    $("lb-close").focus();
+  }
+  function closeLB(){
+    lb.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+  const step = d => {
+    if (lbList.length < 2) return;
+    lbIndex = (lbIndex + d + lbList.length) % lbList.length;
+    showLB();
+  };
+
+  grid.addEventListener("click", e => {
+    const btn = e.target.closest(".card-btn");
+    if (!btn) return;
+    const card = btn.closest(".card");
+    if (card) openLB(card.dataset.id);
+  });
+  $("lb-close").addEventListener("click", closeLB);
+  lbPrev.addEventListener("click", () => step(-1));
+  lbNext.addEventListener("click", () => step(1));
+  lb.addEventListener("click", e => { if (e.target === lb) closeLB(); });
+  document.addEventListener("keydown", e => {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") closeLB();
+    else if (e.key === "ArrowLeft") step(-1);
+    else if (e.key === "ArrowRight") step(1);
+  });
+
+  /* ================= 选图 + 本地压缩 ================= */
+  const drop = $("drop"), fileInput = $("file"), preview = $("preview"),
+        previewImg = $("preview-img"), previewName = $("preview-name");
+  let pendingBlob = null, pendingUrl = null;
+
+  function compress(file, maxSide, quality){
+    return new Promise((resolve, reject) => {
+      if (!/^image\//.test(file.type)) { reject(new Error("请选择图片文件")); return; }
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = () => {
+        try{
+          const scale = Math.min(1, maxSide / Math.max(img.width, img.height));
+          const w = Math.max(1, Math.round(img.width * scale));
+          const h = Math.max(1, Math.round(img.height * scale));
+          const c = document.createElement("canvas");
+          c.width = w; c.height = h;
+          c.getContext("2d").drawImage(img, 0, 0, w, h);
+          URL.revokeObjectURL(url);
+          c.toBlob(b => b ? resolve(b) : reject(new Error("压缩失败")), "image/jpeg", quality);
+        }catch(err){ URL.revokeObjectURL(url); reject(err); }
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("图片读取失败")); };
+      img.src = url;
+    });
+  }
+
+  async function handleFile(file){
+    if (!file) return;
+    try{
+      const blob = await compress(file, 1600, 0.82);
+      if (pendingUrl) URL.revokeObjectURL(pendingUrl);
+      pendingBlob = blob;
+      pendingUrl = URL.createObjectURL(blob);
+      previewImg.src = pendingUrl;
+      previewName.textContent = file.name + " · 已压缩 " + Math.round(blob.size/1024) + "KB";
+      preview.hidden = false;
+      drop.querySelector(".in").style.display = "none";
+    }catch(err){
+      toast(err.message || "图片处理失败，请换一张试试");
+    }
+  }
+
+  function resetImage(){
+    if (pendingUrl) { URL.revokeObjectURL(pendingUrl); pendingUrl = null; }
+    pendingBlob = null;
+    preview.hidden = true;
+    previewImg.removeAttribute("src");
+    fileInput.value = "";
+    drop.querySelector(".in").style.display = "";
+  }
+
+  drop.addEventListener("click", e => {
+    if (e.target.closest("#clear-img")) return;
+    fileInput.click();
+  });
+  drop.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fileInput.click(); }
+  });
+  fileInput.addEventListener("change", () => handleFile(fileInput.files[0]));
+  $("clear-img").addEventListener("click", e => { e.stopPropagation(); resetImage(); });
+
+  ["dragenter","dragover"].forEach(t => drop.addEventListener(t, e => {
+    e.preventDefault(); drop.classList.add("over");
+  }));
+  ["dragleave","dragend","drop"].forEach(t => drop.addEventListener(t, e => {
+    e.preventDefault(); drop.classList.remove("over");
+  }));
+  drop.addEventListener("drop", e => {
+    const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+    if (f) handleFile(f);
+  });
+
+  /* ================= 提交到云端 ================= */
+  const form = $("form"), submitBtn = $("submit-btn");
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+
+    const title = $("f-title").value.trim();
+    const author = $("f-author").value.trim();
+    const group = $("f-group").value.trim();
+    const category = $("f-cat").value;
+    const desc = $("f-desc").value.trim();
+
+    if (!ready){ toast("站点未配置完成，暂时无法投稿"); return; }
+    if (!pendingBlob){ toast("请先选择一张照片"); drop.focus(); return; }
+    if (!title){ toast("请填写作品标题"); $("f-title").focus(); return; }
+    if (!author){ toast("请填写作者姓名"); $("f-author").focus(); return; }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "上传中…";
+
+    try{
+      await ensureLogin();
+
+      const cloudPath = "works/" + Date.now() + "_" +
+        Math.random().toString(36).slice(2,7) + ".jpg";
+      const up  = await app.uploadFile({ cloudPath, filePath: pendingBlob });
+      const fileID = up.fileID;
+
+      const data = {
+        title, author, group, category, desc,
+        fileID, ts: Date.now(), status: "approved"
+      };
+
+      try{
+        await db.collection(COLL).add({ data });
+      }catch(err1){
+        // 兼容部分版本 SDK 的写法
+        await db.collection(COLL).add(data);
+      }
+
+      form.reset();
+      resetImage();
+      activeCat = "全部";
+      filtersEl.querySelectorAll("button").forEach(x =>
+        x.setAttribute("aria-pressed", String(x.textContent === "全部")));
+
+      await loadWorks();
+      toast("投稿成功，作品已出现在展厅！");
+
+      const gallery = document.getElementById("gallery");
+      if (gallery) gallery.scrollIntoView({ behavior:"smooth", block:"start" });
+      requestAnimationFrame(() => {
+        const first = grid.querySelector(".card");
+        if (first) first.classList.add("new");
+      });
+    }catch(err){
+      toast("投稿失败：" + (err && err.message ? err.message : "请稍后重试"));
+    }finally{
+      submitBtn.disabled = false;
+      submitBtn.textContent = "提交作品";
+    }
+  });
+
+  /* ================= 刷新 ================= */
+  $("reload").addEventListener("click", () => {
+    countEl.textContent = "加载中…";
+    loadWorks();
+    toast("已刷新");
+  });
+
+  /* ================= 滚动入场 ================= */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, { threshold:0.12, rootMargin:"0px 0px -60px 0px" });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  /* ================= 轻提示 ================= */
+  let toastTimer = null;
+  function toast(msg){
+    const el = $("toast");
+    el.textContent = msg;
+    el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove("show"), 3200);
+  }
+
+  /* ================= 启动 ================= */
+  loadWorks();
+})();
+</script>
+</body>
+</html>
