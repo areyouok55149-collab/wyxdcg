@@ -401,7 +401,7 @@
   async function ensureLogin(){
     if (loggedIn) return;
     if (auth.hasLoginState && auth.hasLoginState()) { loggedIn = true; return; }
-    await auth.anonymousAuthProvider().signIn();
+    await auth.signInAnonymously();
     loggedIn = true;
   }
 
